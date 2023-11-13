@@ -1,0 +1,35 @@
+---
+title: "Introduction_CliniclalTranscriptLink"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction_CliniclalTranscriptLink}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ClinicalTranscriptLink)
+```
+
+Through this vignette, we will be analysing clinical and rnaseq data from The Cancer Genome Atlas Program (TCGA), specifically for the BRCA gene.
+
+```{r}
+# import datasets
+library(RTCGA.clinical)
+library(RTCGA.rnaseq)
+
+BRCA_clinical <- data("BRCA.clinical")
+BRCA_rnaseq <- data("BRCA.rnaseq")
+```
+
+Clinical Datasets should contain information
+```{r}
+# Merge Datasets
+```
