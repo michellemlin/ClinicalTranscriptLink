@@ -4,10 +4,25 @@
 # Version:
 # Bugs and Issues:
 
-library(RTCGA.clinical)
-data(package = "RTCGA.clinical")
+# dev tools set up
+# library(devtools)
+# library(testthat)
+# library(roxygen2)
+# library(testthat)
+# devtools::has_devel()
 
-library(RTCGA.rnaseq)
-data(package = "RTCGA.rnaseq")
-BRCA_data <- data("BRCA.rnaseq")
-BRCA_data
+# developing and testing package
+# load_all()
+# devtools::document()
+
+#
+# library(RTCGA.clinical)
+# data(package = "RTCGA.clinical")
+# BRCA_clinical <- data("BRCA.clinical")
+#
+# library(RTCGA.rnaseq)
+# data(package = "RTCGA.rnaseq")
+# BRCA_rnaseq <- data("BRCA.rnaseq")
+#
+# ?BRCA.rnaseq
+# ??BRCA.clinical
