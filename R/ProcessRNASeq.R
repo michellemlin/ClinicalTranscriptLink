@@ -17,8 +17,12 @@
 #' \dontrun{
 #' processRNASeq(BRCA.clinical)
 #' }
+#'
 processRNASeq <- function(dataset){
-  countMatrix <- as.matrix(dataset)
+  dataset <- as.data.frame(dataset)
+  datasetT <- t(dataset)
+  transposed <- as.data.frame(datasetT)
+  countMatrix <- as.matrix(datasetT)
 
   # create the DESeqDataSet object
   DESeqObj <- DESeqDataSetFromMatrix(countData = countMatrix,
