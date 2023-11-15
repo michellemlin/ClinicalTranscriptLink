@@ -18,10 +18,13 @@
 #'
 #' @export
 #'
-#' #' @examples
+#' @examples
 #' \dontrun{
 #' library(RTCGA.clinical)
-#' metadataDeceased <- subset(metadata, metadata$patient.clinical_cqcf.consent_or_death_status == "deceased")
+#' library(BRCA.clinical)
+#' metadata <- BRCA.clinical
+#' metadataDeceased <- subset(metadata,
+#' metadata$patient.clinical_cqcf.consent_or_death_status == "deceased")
 #' metadataDeceased$patient.days_to_death <- as.numeric(metadataDeceased$patient.days_to_death)
 #' survivalExplore(metadataDeceased, "patient.days_to_death")
 #' }

@@ -26,6 +26,16 @@ returns NULL and plots heatmap for the RNA seq count matrix
 \description{
 Plots a heatmap for the normalised count matrix for explanatory analysis of RNASeq expression data
 }
+\examples{
+\dontrun{
+library(RTCGA.clinical)
+library(BRCA.clinical)
+survivalMapVis(BRCA.clinical,
+timeToEvent = "patient.days_to_death",
+event = "patient.clinical_cqcf.consent_or_death_status")
+}
+
+}
 \references{
 R Core Team (2023). \emph{R: A Language and Environment for Statistical Computing}.
 R Foundation for Statistical Computing, Vienna, Austria.

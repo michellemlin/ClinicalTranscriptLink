@@ -8,8 +8,6 @@ processRNASeq(dataset)
 }
 \arguments{
 \item{dataset}{A count matrix of gene expression where each row is the expression of genes for a patient}
-
-\item{normMethod}{Method of Normalisation}
 }
 \value{
 A processed count matrix that was normalised.
@@ -19,6 +17,7 @@ Clean and preprocess the RNA sequencing data. Prints information about the norma
 }
 \examples{
 \dontrun{
+library(RTCGA.clinical)
 processRNASeq(BRCA.clinical)
 }
 

@@ -14,12 +14,9 @@ Description: ClinicalTranscriptLink is a package that aims to identify correlati
     link to help us better understand the relation. 
 License: MIT + file LICENSE
 Imports:
-    RTCGA.clinical,
-    RTCGA.rnaseq,
     DESeq2,
     survival,
-    survminer,
-    dplyr
+    survminer
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

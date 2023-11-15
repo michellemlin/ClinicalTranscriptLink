@@ -12,6 +12,8 @@
 #'
 #' @returns returns NULL and plots heatmap for the RNA seq count matrix
 #'
+#'
+#'
 #' @import DESeq2
 #' @import stats
 #' @export

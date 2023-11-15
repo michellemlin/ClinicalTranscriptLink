@@ -20,6 +20,15 @@
 #'
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' library(RTCGA.clinical)
+#' library(BRCA.clinical)
+#' survivalMapVis(BRCA.clinical,
+#' timeToEvent = "patient.days_to_death",
+#' event = "patient.clinical_cqcf.consent_or_death_status")
+#' }
+#'
 #' @references
 #' R Core Team (2023). _R: A Language and Environment for Statistical Computing_.
 #' R Foundation for Statistical Computing, Vienna, Austria.

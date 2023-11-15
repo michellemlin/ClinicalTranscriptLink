@@ -17,6 +17,18 @@ returns NULL and plots the histograms
 \description{
 Plot histograms for distributions
 }
+\examples{
+\dontrun{
+library(RTCGA.clinical)
+library(BRCA.clinical)
+metadata <- BRCA.clinical
+metadataDeceased <- subset(metadata,
+metadata$patient.clinical_cqcf.consent_or_death_status == "deceased")
+metadataDeceased$patient.days_to_death <- as.numeric(metadataDeceased$patient.days_to_death)
+survivalExplore(metadataDeceased, "patient.days_to_death")
+}
+
+}
 \references{
 R Core Team (2023). \emph{R: A Language and Environment for Statistical Computing}.
 R Foundation for Statistical Computing, Vienna, Austria.

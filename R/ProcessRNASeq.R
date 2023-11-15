@@ -9,7 +9,6 @@
 #' @import DESeq2
 #'
 #' @param dataset A count matrix of gene expression where each row is the expression of genes for a patient
-#' @param normMethod Method of Normalisation
 #'
 #'
 #' @returns A processed count matrix that was normalised.
