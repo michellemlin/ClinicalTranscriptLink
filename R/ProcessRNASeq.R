@@ -15,8 +15,11 @@
 #' @returns A processed count matrix that was normalised.
 #' @examples
 #' \dontrun{
+#' library(RTCGA.clinical)
 #' processRNASeq(BRCA.clinical)
 #' }
+#'
+#' @export
 #'
 processRNASeq <- function(dataset){
   dataset <- as.data.frame(dataset)

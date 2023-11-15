@@ -15,14 +15,16 @@
 # load_all()
 # devtools::document()
 
-#
-# library(RTCGA.clinical)
-# data(package = "RTCGA.clinical")
-# BRCA_clinical <- data("BRCA.clinical")
-#
-# library(RTCGA.rnaseq)
-# data(package = "RTCGA.rnaseq")
-# BRCA_rnaseq <- data("BRCA.rnaseq")
-#
-# ?BRCA.rnaseq
-# ??BRCA.clinical
+
+#' \dont_run{
+#' library(RTCGA.clinical)
+#' data(package = "RTCGA.clinical")
+#' BRCA_clinical <- data("BRCA.clinical")
+#'
+#' library(RTCGA.rnaseq)
+#' data(package = "RTCGA.rnaseq")
+#' BRCA_rnaseq <- data("BRCA.rnaseq")
+#'
+#' ?BRCA.rnaseq
+#' ??BRCA.clinical
+#' }

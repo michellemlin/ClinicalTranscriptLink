@@ -19,6 +19,12 @@ Obtain metadata about each patient through the clincal data
 }
 \examples{
 \dontrun{
-metadataExtract(BRCA.clinical)
+metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode"))
 }
+
+}
+\references{
+R Core Team (2023). \emph{R: A Language and Environment for Statistical Computing}.
+R Foundation for Statistical Computing, Vienna, Austria.
+\url{https://www.R-project.org/}.
 }

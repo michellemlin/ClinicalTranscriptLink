@@ -15,3 +15,11 @@ returns NULL and plots heatmap for the RNA seq count matrix
 \description{
 Plots a heatmap for the normalised count matrix for explanatory analysis of RNASeq expression data
 }
+\references{
+R Core Team (2023). \emph{R: A Language and Environment for Statistical Computing}.
+R Foundation for Statistical Computing, Vienna, Austria.
+\url{https://www.R-project.org/}
+
+Love, M.I., Huber, W., Anders, S. Moderated estimation of fold change and
+dispersion for RNA-seq data with DESeq2 Genome Biology 15(12):550 (2014)
+}

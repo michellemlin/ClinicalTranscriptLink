@@ -16,7 +16,10 @@ License: MIT + file LICENSE
 Imports:
     RTCGA.clinical,
     RTCGA.rnaseq,
-    DESeq2
+    DESeq2,
+    survival,
+    survminer,
+    dplyr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -25,9 +28,10 @@ Depends: R(>= 3.1.0)
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    RTCGA.clinical,
+    RTCGA.rnaseq
 VignetteBuilder: knitr
-Exports:
-    metadataExtract
-    processRNASeq
 Config/testthat/edition: 3
+URL: https://github.com/michellemlin/ClinicalTranscriptLink
+BugReports: https://github.com/michellemlin/ClinicalTranscriptLink/issues 

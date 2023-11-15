@@ -21,7 +21,7 @@ library(ClinicalTranscriptLink)
 
 ## INTRODUCTION:
 
-
+## WALK THROUGH: 
 Through this vignette, we will be analysing clinical and rnaseq data from The Cancer Genome Atlas Program (TCGA), specifically for the BRCA gene.
 
 ```{r}
@@ -29,17 +29,28 @@ Through this vignette, we will be analysing clinical and rnaseq data from The Ca
 library(RTCGA.clinical)
 library(RTCGA.rnaseq)
 
-BRCA_clinical <- data("BRCA.clinical")
-BRCA_rnaseq <- data("BRCA.rnaseq")
+BRCA_clinical <- BRCA.clinical
+BRCA_rnaseq <- BRCA.clinical
 ```
 
 1. Extract Metadata from Clinical Dataset
 ```{r}
-BRCa_clinical <- data.frame(BRCA.clinical)
-metadata <- metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode", "patient.age_at_initial_pathologic_diagnosis", "patient.breast_carcinoma_estrogen_receptor_status", "patient.breast_carcinoma_progesteron_receptor_status", "patient.clinical_cqcf.consent_or_death_status", "patient.days_to_death"))
+metadata <- ClinicalTranscriptLink::metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode", "patient.age_at_initial_pathologic_diagnosis", "patient.breast_carcinoma_estrogen_receptor_status", "patient.breast_carcinoma_progesterone_receptor_status", "patient.clinical_cqcf.consent_or_death_status", "patient.days_to_death"))
 ```
 
-2. Match patient IDs across the metadata and RNAseq data. This was done for this particular dataset as the IDs in RNA seq have additional codes
+2. Plot a histogram of variable of interest
 ```{r}
-normalisedRNA <- processRNASeq(BRCA.rnaseq)
+metadataDeceased <- subset(metadata, metadata$patient.clinical_cqcf.consent_or_death_status == "deceased")
+metadataDeceased$patient.days_to_death <- as.numeric(metadataDeceased$patient.days_to_death)
+survivalExplore(metadataDeceased, "patient.days_to_death")
 ```
+
+3. Survival Analysis
+```{r}
+survivalMapVis(metadata, timeToEvent = "patient.days_to_death", event = "patient.clinical_cqcf.consent_or_death_status")
+```
+
+<!-- 4. Match patient IDs across the metadata and RNAseq data. This was done for this particular dataset as the IDs in RNA seq have additional codes -->
+<!-- ```{r} -->
+<!-- normalisedRNA <- processRNASeq(BRCA.rnaseq) -->
+<!-- ``` -->

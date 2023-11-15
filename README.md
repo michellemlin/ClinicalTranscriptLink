@@ -45,11 +45,24 @@ data(package = "ClinicalTranscriptLink")
 browseVignettes("ClinicalTranscriptLink")
 ```
 
-`ClinicalTranscriptLink` provides 3 functions:
+`ClinicalTranscriptLink` provides the following functions at the moment:
+
+- `metadataExtract` : a function that allows users to extract metadata
+  from from clinical data
+
+- `SurvivalMapVis` : a function that allows users to conduct survival
+  analysis using package `survival`
+
+- `survivalExplore` : a function that allows users to explore metadata
+  through visualisations
+
+![](./MichellePackageOverview.png)
 
 ## Contributions
 
-This package was created by `Michelle Lin` and contains
+This package was created by `Michelle Lin` and contains functions found
+in packages `survival`, `survminer`, `dplyr` for survival analysis and
+`DESeq2` that will be used for differential expression analysis.
 
 ## References
 
@@ -66,7 +79,24 @@ This package was created by `Michelle Lin` and contains
   <https://doi.org/10.18129/B9.bioc.RTCGA.rnaseq>, R package version
   20151101.30.0, <https://bioconductor.org/packages/RTCGA.rnaseq>.
 
-- 
+- Love, M.I., Huber, W., Anders, S. Moderated estimation of fold change
+  and dispersion for RNA-seq data with DESeq2 Genome Biology 15(12):550
+  (2014)
+
+- R Core Team (2023). *R: A Language and Environment for Statistical
+  Computing*. R Foundation for Statistical Computing, Vienna, Austria.
+  <https://www.R-project.org/>
+
+- Therneau T (2023). *A Package for Survival Analysis in R*. R package
+  version 3.5-5, <https://CRAN.R-project.org/package=survival>.
+
+- Kassambara A, Kosinski M, Biecek P (2021). *survminer: Drawing
+  Survival Curves using ‘ggplot2’*. R package version 0.4.9,
+  <https://CRAN.R-project.org/package=survminer>.
+
+- Wickham H, Francois R, Henry L, Muller K, Vaughan D (2023). *dplyr: A
+  Grammar of Data Manipulation*. R package version 1.1.3,
+  <https://CRAN.R-project.org/package=dplyr>.
 
 ## Acknowledgements
 
