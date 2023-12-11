@@ -32,6 +32,7 @@ metadataExtract <- function(dataset,
     # extract the metadata information from the corresponding columns
     patientMeta <- dataset[, metadata, drop=FALSE]
   }
+
   else{ # Error if data set is not a data frame
     stop("dataset needs to be of form data frame")
   }
