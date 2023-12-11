@@ -10,15 +10,17 @@
 
 `ClinicalTranscriptLink` is a package that aims to identify correlations
 between clinical expression of cancers and the transcriptional
-expression using bulk RNA sequencing data. Packages currently available
-only study one of these and do not provide any correlation between the
-clinical expression of diseases and the corresponding gene expression.
-As such, this package aims to create that link to help us better
-understand the relation.
+expression of genes using bulk RNA sequencing data. Packages currently
+available only study one of these and do not provide much correlation
+between the clinical expression of diseases and the corresponding gene
+expression. As such, this package aims to create that link to help us
+better understand the relation. Specifically, the package aims to
+study: - 1) the type of cancer and its relation to gene expression - 2)
+the survival analysis of different types of cancer
 
-This package contains functions for analysis of the data and functions
-for visualisation of the data. The `ClinicalTranscriptLink` package was
-developed using `R version 4.3.1 (2023-06-16)`,
+This package contains functions to perform analysis as well as
+visualisation of the above two goals. The `ClinicalTranscriptLink`
+package was developed using `R version 4.3.1 (2023-06-16)`,
 `Platform: x86_64-w64-mingw32/x64 (64-bit)` and
 `Running under: Windows 11 x64 (build 22631)`.
 
@@ -29,7 +31,7 @@ You can install the development version of ClinicalTranscriptLink from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("michellemlin/ClinicalTranscriptLink")
+devtools::install_github("michellemlin/ClinicalTranscriptLink", build_vignettes = TRUE)
 library(ClinicalTranscriptLink)
 ```
 
