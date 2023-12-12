@@ -148,3 +148,8 @@ BCB410H1: Applied Bioinformatics course at the University of Toronto,
 Toronto, CANADA. ClinicalTranscriptLink welcomes issues, enhancement
 requests, and other contributions. To submit an issue, use the GitHub
 issues.
+
+## NOTE
+
+The package may take a while to build as the vignettes have datasets
+that are really large and thus, take a long time to build.
