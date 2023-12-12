@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' library(TCGA)
+#' ClinicalTranscriptLink::heatmapGenerate(testing_data, "patient.race", "?|100130426")
 #' }
 #'
 #' @note
@@ -82,13 +82,13 @@ heatmapGenerate <- function(dataset, feature, geneExpStart){
     # Create the heat map
     gplots::heatmap.2(as.matrix(geneExp[,-1]),
                     col = palette,  # Use a color palette
-                    scale = "column",  # Scale columns
-                    trace = "none",    # Disable trace lines
+                    scale = "column",
+                    trace = "none",
                     margins = c(5, 10),  # Adjust margins
                     main = paste0("Heatmap of ", feature ," and Gene Expression")
                     )
 
-    return(invisible(NULL))
+    # return(invisible(NULL))
   }
 }
 

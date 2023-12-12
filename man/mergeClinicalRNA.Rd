@@ -23,11 +23,22 @@ Merge the Clinical and RNASeq data based on unique column - the patient barcode
 }
 \note{
 Generative AI - ChatGPT was used to assist in providing a base code on how
-to use different functions - eg. question used was
+to use different functions and debugging
+
+Note that this function takes a while to run because of the huge datasets.
+The merged output for reference can be found in ext/data in a file named "merged"
 }
 \examples{
 \dontrun{
-TODO
+library(RTCGA.clinical)
+library(RTCGA.rnaseq)
+data(BRCA.clinical)
+data(BRCA.rnaseq)
+
+ClinicalTranscriptLink::mergeClinicalRNA(clinical = metadata,
+RNA = BRCA.rnaseq,
+ID1 = "patient.bcr_patient_barcode",
+ID2 = "bcr_patient_barcode")
 }
 
 }

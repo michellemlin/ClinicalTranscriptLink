@@ -14,7 +14,6 @@ Description: ClinicalTranscriptLink is a package that aims to identify correlati
     link to help us better understand the relation. 
 License: MIT + file LICENSE
 Imports:
-    DESeq2,
     survival,
     survminer
 Encoding: UTF-8

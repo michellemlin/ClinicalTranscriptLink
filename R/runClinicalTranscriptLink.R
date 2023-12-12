@@ -9,7 +9,6 @@
 #'
 #' @examples
 #' \dontrun{
-#'
 #' ClinicalTranscriptLink::runClinicalTranscriptLink()
 #' }
 #'
