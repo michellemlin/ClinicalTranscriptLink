@@ -118,8 +118,8 @@ All of the error checking and logic was done by author.
   20151101.30.0, <https://bioconductor.org/packages/RTCGA.rnaseq>.
 
 - Love, M.I., Huber, W., Anders, S. Moderated estimation of fold change
-  and dispersion for RNA-seq data with DESeq2 Genome Biology 15(12):550
-  (2014)
+  and dispersion for RNA-seq data with DESeq2 *Genome Biology*
+  15(12):550 (2014)
 
 - R Core Team (2023). *R: A Language and Environment for Statistical
   Computing*. R Foundation for Statistical Computing, Vienna, Austria.
@@ -138,6 +138,8 @@ All of the error checking and logic was done by author.
 
 - OpenAI. (2023). GPT-3.5: A language model by OpenAI.
   <https://www.openai.com/gpt-3.5>
+
+- Testing Package (2023). Anjali Silva
 
 ## Acknowledgements
 
