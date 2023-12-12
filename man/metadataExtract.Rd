@@ -17,9 +17,14 @@ A dataframe that contains the clinical metadata for patients
 \description{
 Obtain metadata about each patient through the clincal data
 }
+\note{
+ChatGPT was used to search for useful function - eg. what R function can be used to check for missing arguments?
+}
 \examples{
 \dontrun{
-metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode"))
+library(RTCGA.clinical)
+data("BRCA.clinical")
+ClinicalTranscriptLink::metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode"))
 }
 
 }
@@ -27,4 +32,5 @@ metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode"))
 R Core Team (2023). \emph{R: A Language and Environment for Statistical Computing}.
 R Foundation for Statistical Computing, Vienna, Austria.
 \url{https://www.R-project.org/}.
+OpenAI. (2023). ChatGPT (Version 3.5) \link{Large language model}. https://chat.openai.com/chat'
 }

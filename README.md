@@ -35,7 +35,11 @@ devtools::install_github("michellemlin/ClinicalTranscriptLink", build_vignettes 
 library(ClinicalTranscriptLink)
 ```
 
-To run the Shiny app: under construction
+To run the Shiny app:
+
+``` r
+ClinicalTranscriptLink::runClinicalTranscriptLink()
+```
 
 ## Overview
 
@@ -52,11 +56,18 @@ browseVignettes("ClinicalTranscriptLink")
 - `metadataExtract` : a function that allows users to extract metadata
   from from clinical data
 
-- `SurvivalMapVis` : a function that allows users to conduct survival
-  analysis using package `survival`
+- `mergeClinicalRNA` : a function that allows users to merge the
+  clinical dataset with the RNASeq dataset
 
-- `survivalExplore` : a function that allows users to explore metadata
-  through visualisations
+- `survivalAnalyse` : a function that allows for analysis of survival
+  rates
+
+- `heatmapGenerate` : a function to create a heatmap of gene expression
+  based on clinical features
+
+- `integrityCheckClinical` : a function to check integrity of datasets
+
+- `runClinicalTranscriptLink` : a function to run the Shiny App
 
 ![](./MichellePackageOverview.png)
 
@@ -65,6 +76,31 @@ browseVignettes("ClinicalTranscriptLink")
 This package was created by `Michelle Lin` and contains functions found
 in packages `survival`, `survminer`, `dplyr` for survival analysis and
 `DESeq2` that will be used for differential expression analysis.
+
+`ClinicalTranscriptLink` provides the following functions at the moment
+and contributions are:
+
+- `metadataExtract` : The author wrote this function using base R
+  functions. Open AI was used to search for potential functions but
+  structure and logic was by author
+
+- `mergeClinicalRNA` : The author wrote this function using baseR
+  functions. Open AI was used to search for potential functions and
+  debugging but logic was by author.
+
+- `survivalAnalyse` : This function was written by author and utilise
+  functions in the `survival` library.
+
+- `heatmapGenerate` : The author wrote this function and made design
+  decisions. Open AI was used to search for potential functions and
+  debugging purposes.
+
+- `integrityCheckClinical` : This function was written by author with
+  the help of OpenAI for function search
+
+- `runClinicalTranscriptLink` : a function to run the Shiny App
+
+All of the error checking and logic was done by author.
 
 ## References
 
@@ -99,6 +135,9 @@ in packages `survival`, `survminer`, `dplyr` for survival analysis and
 - Wickham H, Francois R, Henry L, Muller K, Vaughan D (2023). *dplyr: A
   Grammar of Data Manipulation*. R package version 1.1.3,
   <https://CRAN.R-project.org/package=dplyr>.
+
+- OpenAI. (2023). GPT-3.5: A language model by OpenAI.
+  <https://www.openai.com/gpt-3.5>
 
 ## Acknowledgements
 

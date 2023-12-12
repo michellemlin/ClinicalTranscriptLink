@@ -14,12 +14,25 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 ```{r setup}
-# devtools::install_github("michellemlin/ClinicalTranscriptLink")
+devtools::install_github("michellemlin/ClinicalTranscriptLink", build_vignettes = TRUE)
 library(ClinicalTranscriptLink)
 ```
 
 ## INTRODUCTION:
+
+To download **ClinicalTranscriptLink**, use the following commands:
+
+``` r
+require("devtools")
+devtools::install_github("michellemlin/ClinicalTranscriptLink", build_vignettes = TRUE)
+library(ClinicalTranscriptLink)
+```
+To list all sample functions available in the package:
+``` r
+ls("package:ClinicalTranscriptLink")
+```
 
 ## WALK THROUGH: 
 Through this vignette, we will be analysing clinical and rnaseq data from The Cancer Genome Atlas Program (TCGA), specifically for the BRCA gene.
@@ -29,28 +42,50 @@ Through this vignette, we will be analysing clinical and rnaseq data from The Ca
 library(RTCGA.clinical)
 library(RTCGA.rnaseq)
 
-BRCA_clinical <- BRCA.clinical
-BRCA_rnaseq <- BRCA.clinical
+data("BRCA.rnaseq")
+data("BRCA.clinical")
+```
+1. View datasets
+```{r}
+head(BRCA.rnaseq)
+head(BRCA.clinical)
 ```
 
-1. Extract Metadata from Clinical Dataset
+2. Extract Metadata from Clinical Dataset
 ```{r}
-metadata <- ClinicalTranscriptLink::metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode", "patient.age_at_initial_pathologic_diagnosis", "patient.breast_carcinoma_estrogen_receptor_status", "patient.breast_carcinoma_progesterone_receptor_status", "patient.clinical_cqcf.consent_or_death_status", "patient.days_to_death"))
+metadata <- ClinicalTranscriptLink::metadataExtract(BRCA.clinical, 
+                                                    c("patient.bcr_patient_barcode",
+                                                      "patient.age_at_initial_pathologic_diagnosis",
+                                                      "patient.breast_carcinoma_estrogen_receptor_status",
+                                                      "patient.breast_carcinoma_progesterone_receptor_status",
+                                                      "patient.vital_status",
+                                                      "patient.days_to_death",
+                                                      "patient.race",
+                                                      "patient.clinical_cqcf.histological_type"))
+```
+2. Merge Clinical Metadata with RNA-Seq Data
+```{r}
+merged <- ClinicalTranscriptLink::mergeClinicalRNA(clinical = metadata, 
+                                                   RNA = BRCA.rnaseq, 
+                                                   ID1 = "patient.bcr_patient_barcode", 
+                                                   ID2 = "bcr_patient_barcode")
 ```
 
-2. Plot a histogram of variable of interest
+2. Plot a heatmap of gene expression with respect to a factor in clinical data
 ```{r}
-metadataDeceased <- subset(metadata, metadata$patient.clinical_cqcf.consent_or_death_status == "deceased")
-metadataDeceased$patient.days_to_death <- as.numeric(metadataDeceased$patient.days_to_death)
-survivalExplore(metadataDeceased, "patient.days_to_death")
+heatmapGenerate(merged, "patient.race", "?|100130426")
 ```
 
 3. Survival Analysis
 ```{r}
-survivalMapVis(metadata, timeToEvent = "patient.days_to_death", event = "patient.clinical_cqcf.consent_or_death_status")
+survivalAnalyse(metadata, timeToEvent = "patient.days_to_death", event = "patient.vital_status")
 ```
 
-<!-- 4. Match patient IDs across the metadata and RNAseq data. This was done for this particular dataset as the IDs in RNA seq have additional codes -->
-<!-- ```{r} -->
-<!-- normalisedRNA <- processRNASeq(BRCA.rnaseq) -->
-<!-- ``` -->
+4. Run Shiny App
+```{r}
+runClinicalTranscriptLink()
+```
+
+```{r}
+sessionInfo()
+```

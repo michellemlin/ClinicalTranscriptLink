@@ -5,10 +5,10 @@
 # Bugs and Issues:
 
 # dev tools set up
-# library(devtools)
-# library(testthat)
-# library(roxygen2)
-# library(testthat)
+library(devtools)
+library(testthat)
+library(roxygen2)
+library(testthat)
 # devtools::has_devel()
 
 # developing and testing package

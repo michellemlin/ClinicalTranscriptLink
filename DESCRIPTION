@@ -8,7 +8,7 @@ Author: person("Michelle", "Lin", email = "michellem.lin@mail.utoronto.ca",
 Maintainer: Michelle Lin <michellem.lin@mail.utoronto.ca>
 Description: ClinicalTranscriptLink is a package that aims to identify correlations between 
     clinical expression of cancers and the transcriptional expression using bulk 
-    RNA sequencing data. Packages currently available only study one of these and 
+    RNA sequencing data in the TCGA database. Packages currently available only study one of these and 
     do not provide any correlation between the clinical expression of diseases and 
     the corresponding gene expression. As such, this package aims to create that 
     link to help us better understand the relation. 

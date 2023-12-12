@@ -12,7 +12,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' metadataExtract(BRCA.clinical, c("patient.bcr_patient_barcode"))
+#' library(BRCA.clinical)
+#' integrityCheckClinical(BRCA.clinical)
 #' }
 #'
 #' @references
@@ -29,14 +30,14 @@
 integrityCheckClinical <- function(dataset){
 
   # check if a dataset was passed in
-  if (!is.null(dataset)){
-    print("A dataset is required. Please pass in a dataset.")
+  if (is.null(dataset)){
+    stop("A dataset is required. Please pass in a dataset.")
     return(FALSE)
   }
   else{
     # check if the dataset is of correct format - a dataframe
     if (!is.data.frame(dataset)){
-      print("The dataset needs to be a dataframe.")
+      stop("The dataset needs to be a dataframe.")
       return(FALSE)
     }
     else{
